@@ -14,7 +14,7 @@ body {
 h1 {
 	text-align: center;
 	padding: 5px 0;
-	color: #e6b473;
+	color: #e9a11c;
 	font-size: 40px;
 }
 
@@ -38,17 +38,21 @@ input {
 }
 
 #racing-area {
-	/*border: 2px solid #e6e6e6;*/
+	position: relative;
+	width: 100%;
 	height: 10%;
-  border-bottom-style: dashed;
-  border-bottom-color: goldenrod;
+  	border-bottom-style: dashed;
+  	border-bottom-color: #e9a11c;
 }
 
 .car {
+	position: absolute;
+	left: 0%;
 	width: 50px;
 	height: 100%;
-	border: 2px red;
-	background: pink;
+	background-image: url('../images/car-icon.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
 #text-area {
