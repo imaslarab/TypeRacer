@@ -33,18 +33,34 @@ input {
 	padding: 30px;
 }
 
+#timer {
+	height: 20%;
+}
+
+#racing-area {
+	/*border: 2px solid #e6e6e6;*/
+	height: 10%;
+  border-bottom-style: dashed;
+  border-bottom-color: goldenrod;
+}
+
+.car {
+	width: 50px;
+	height: 100%;
+	border: 2px red;
+	background: pink;
+}
+
 #text-area {
+	margin-top: 20px;
 	border: 2px solid #e6e6e6;
 	padding: 10px;
 	height: 25%;
 }
 
-#racing-area {
-	border: 2px solid #e6e6e6;
-	height: 50%;
-}
 
 #input-area {
+	margin: 20px 0;
 	height: 25%;
 }
 
