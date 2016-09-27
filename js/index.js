@@ -46,7 +46,7 @@ function Racer() {
 		time = document.createElement('span');
 		speed = document.createElement('span');
 
-		timer = setInterval(updateTimer, ONE_SECOND);
+		timer = setInterval(startTimer, ONE_SECOND);
 		timerArea.appendChild(time);
 
 		timerArea.appendChild(speed);
@@ -68,7 +68,7 @@ function Racer() {
 		inputText.type = 'text';
 		inputText.placeholder = 'Start typing here';
 		inputArea.appendChild(inputText);
-
+		
 		inputText.addEventListener( 'keypress', function(event) {
 			inputText.setAttribute('class', '');
 			if(event.keyCode == SPACE_BAR_KEY) {
@@ -122,8 +122,9 @@ function Racer() {
 		car.style.left = (currentIndex / words.length) * (100 - (carWidth/containerWidth * 100)) + '%';
 	}
 
-	function updateTimer() {
+	function startTimer() {
 		time.innerHTML = that.minute + ' : ' + that.second;
+		inputText.focus();
 	    that.second++;
 	    that.currentTime++;
 	    if (that.second >= MINUTE_UNIT) {
