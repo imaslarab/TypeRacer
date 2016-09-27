@@ -33,8 +33,14 @@ input {
 	padding: 30px;
 }
 
-#timer {
+#timer-area {
 	height: 20%;
+	text-align: center;
+}
+
+#timer-area span {
+	color: #a9a9a9;
+	display: block;
 }
 
 #racing-area {

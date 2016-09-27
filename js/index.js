@@ -1,24 +1,55 @@
 function Racer() {
 
-	var SPACEBARKEY = 32;
+	var that = this;
 
-	var inputArea;
-	var textArea;
+	var SPACE_BAR_KEY = 32;
+	var ONE_SECOND = 1000;
+	var HALF_SECOND = 500;
+	var MINUTE_UNIT = 60;
+
+	var timerArea;
 	var racingArea;
+	var textArea;
+	var inputArea;
 
-	var car;
 	var carWidth;
 	var containerWidth;
 	var paragraph;
 	var text;
 	var inputText;
 	var words;
-	var currentIndex = 0;
+	
+	var time;
+	var speed;
+	var car;
+	var timer;
+	var currentIndex;
+
+	this.currentTime;
+	this.wpm;
+	this.minute;
+	this.second;
 
 	this.init = function() {
+
+		currentIndex = 0;
+		that.currentTime = 0;
+		that.wpm = 0;
+		that.minute = 0;
+		that.second = 0;
+
+		timerArea = document.getElementById('timer-area');
+		racingArea = document.getElementById('racing-area');
 		textArea = document.getElementById('text-area');
 		inputArea = document.getElementById('input-area');
-		racingArea = document.getElementById('racing-area');
+
+		time = document.createElement('span');
+		speed = document.createElement('span');
+
+		timer = setInterval(updateTimer, ONE_SECOND);
+		timerArea.appendChild(time);
+
+		timerArea.appendChild(speed);
 
 		car = document.createElement('div');
 		car.setAttribute('class', 'car');
@@ -35,12 +66,12 @@ function Racer() {
 
 		inputText = document.createElement('input');
 		inputText.type = 'text';
-		inputText.placeholder = 'type here';
+		inputText.placeholder = 'Start typing here';
 		inputArea.appendChild(inputText);
 
 		inputText.addEventListener( 'keypress', function(event) {
 			inputText.setAttribute('class', '');
-			if(event.keyCode == SPACEBARKEY) {
+			if(event.keyCode == SPACE_BAR_KEY) {
 				event.preventDefault();
 				match(inputText.value, words[currentIndex]);
 			}
@@ -50,7 +81,7 @@ function Racer() {
 	function addSpan() {
 		for(var j = 0; j < words.length; j++) {
 			paragraph = document.createElement('span');
-			paragraph.innerHTML += words[j] + " "; 
+			paragraph.innerHTML += words[j] + ' '; 
 			textArea.appendChild(paragraph);
 		}
 	}
@@ -63,15 +94,15 @@ function Racer() {
 			moveCar(currentIndex);
 			updatePlayGround(currentIndex);
 			if( currentIndex >= words.length) {
+				clearInterval (timer);
 				setTimeout(function() {
-					alert("You Win");
-            	},500);
+					alert('YaaaY!!!! COMPLETED ');
+            	}, HALF_SECOND);
 			}
 		}
 
 		else {
 			inputText.setAttribute('class', 'error');
-			console.log('value doesnot match');
 		}
 	}
 
@@ -89,6 +120,22 @@ function Racer() {
 
 	function moveCar(currentIndex) {
 		car.style.left = (currentIndex / words.length) * (100 - (carWidth/containerWidth * 100)) + '%';
+	}
+
+	function updateTimer() {
+		time.innerHTML = that.minute + ' : ' + that.second;
+	    that.second++;
+	    that.currentTime++;
+	    if (that.second >= MINUTE_UNIT) {
+	    	that.minute++;
+	    	that.second = 0;
+	    }
+	    updateWpm(that.wpm);
+	}	
+
+	function updateWpm(value) {
+		value = Math.round((currentIndex + 1) / that.currentTime * MINUTE_UNIT);
+		speed.innerHTML = value + ' ' + 'wpm';
 	}
 
 }
