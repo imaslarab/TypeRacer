@@ -1,4 +1,3 @@
-function Racer() {
 
 	var that = this;
 
@@ -31,7 +30,6 @@ function Racer() {
 	this.second;
 
 	this.init = function() {
-
 		currentIndex = 0;
 		that.currentTime = 0;
 		that.wpm = 0;
