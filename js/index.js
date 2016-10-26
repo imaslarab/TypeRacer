@@ -130,7 +130,7 @@
 	    }
 	    updateWpm(that.wpm);
 	}	
-
+	//Why this function ?
 	function updateWpm(value) {
 		value = Math.round((currentIndex + 1) / that.currentTime * MINUTE_UNIT);
 		speed.innerHTML = value + ' ' + 'wpm';
