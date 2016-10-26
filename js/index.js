@@ -85,7 +85,6 @@
 	}
 
 	function match(inputValue, givenValue) {
-		
 		if(inputValue == givenValue) {
 			inputText.value = '';
 			currentIndex ++;
