@@ -1,4 +1,3 @@
-function Racer() {
 
 	var that = this;
 
@@ -31,7 +30,6 @@ function Racer() {
 	this.second;
 
 	this.init = function() {
-
 		currentIndex = 0;
 		that.currentTime = 0;
 		that.wpm = 0;
@@ -87,7 +85,6 @@ function Racer() {
 	}
 
 	function match(inputValue, givenValue) {
-		
 		if(inputValue == givenValue) {
 			inputText.value = '';
 			currentIndex ++;
@@ -133,7 +130,7 @@ function Racer() {
 	    }
 	    updateWpm(that.wpm);
 	}	
-
+	//Why this function ?
 	function updateWpm(value) {
 		value = Math.round((currentIndex + 1) / that.currentTime * MINUTE_UNIT);
 		speed.innerHTML = value + ' ' + 'wpm';
