@@ -58,7 +58,7 @@ function Racer() {
 		containerWidth = parseInt(window.getComputedStyle(car.parentNode, null).getPropertyValue('width'));
 		carWidth = parseInt(window.getComputedStyle(car, null).getPropertyValue('width'));
 
-		text = 'Keying text is important, but it is more important to be able to make it look professional.';
+		text = 'A man travels the world over in search of what he needs and returns home to find it.';
 		words = text.split(' ');
 
 		addSpan();
