@@ -93,7 +93,7 @@ function Racer() {
 			if( currentIndex >= words.length) {
 				clearInterval (timer);
 				setTimeout(function() {
-					alert('YaaaY!!!! COMPLETED ');
+					alert('GAME COMPLETED \n Your Score is '+ that.wpm);
             	}, HALF_SECOND);
 			}
 		}
@@ -133,6 +133,7 @@ function Racer() {
 	//Why this function ?
 	function updateWpm(value) {
 		value = Math.round((currentIndex + 1) / that.currentTime * MINUTE_UNIT);
+		that.wpm = value;
 		speed.innerHTML = value + ' ' + 'wpm';
 	}
 
