@@ -1,4 +1,4 @@
-
+function Racer() {
 	var that = this;
 
 	var SPACE_BAR_KEY = 32;
