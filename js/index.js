@@ -135,7 +135,8 @@ function Racer() {
 	}	
 
 	function updateWpm(value) {
-		value = Math.round((currentIndex + 1) / that.currentTime * MINUTE_UNIT);
+		console.log(currentIndex)
+		value = Math.round((currentIndex) / that.currentTime * MINUTE_UNIT);
 		that.wpm = value;
 		speed.innerHTML = value + ' ' + 'wpm';
 	}
