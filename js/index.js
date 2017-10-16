@@ -58,7 +58,7 @@ function Racer() {
 		containerWidth = parseInt(window.getComputedStyle(car.parentNode, null).getPropertyValue('width'));
 		carWidth = parseInt(window.getComputedStyle(car, null).getPropertyValue('width'));
 
-		text = 'A man travels the world over in search of what he needs and returns home to find it.';
+		text = 'My name is Sami!!!, Sami ki jawaani. I am too sexy for you. Mein tere haath na aani';
 		words = text.split(' ');
 
 		addSpan();
