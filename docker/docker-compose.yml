@@ -1,0 +1,8 @@
+---
+web:
+  image: nginx:1.13.5-alpine
+  ports:
+    - 80:80
+  volumes:
+    - ../code:/home/code
+    - ./conf.d:/etc/nginx/conf.d
