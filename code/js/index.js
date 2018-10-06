@@ -130,7 +130,8 @@ function Racer() {
 	    }
 	    updateWpm(that.wpm);
 	}	
-	//Why this function ?
+	
+	// Update the word per minute count
 	function updateWpm(value) {
 		value = Math.round((currentIndex + 1) / that.currentTime * MINUTE_UNIT);
 		speed.innerHTML = value + ' ' + 'wpm';
